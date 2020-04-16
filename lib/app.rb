@@ -25,13 +25,13 @@ def parse_line(line)
         end
     end
     result = Hash.new
-    result[symbol] = price
+    result[symbol] = parse_price(price)
     return result
 end
 
 def parse_price(price_text)
     # TODO: remove$ and convert to float
-    return price_text
+    return price_text[1..-1].to_f
 end
 
 puts 'Download page...'
@@ -56,3 +56,4 @@ end
 puts crypto_name_array.slice(0,20)
 
 puts 'Bye'
+
